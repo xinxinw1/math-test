@@ -1,0 +1,9 @@
+[submodule "lib/tools"]
+	path = lib/tools
+	url = git@github.com:xinxinw1/tools
+[submodule "lib/prec-math"]
+	path = lib/prec-math
+	url = git@github.com:xinxinw1/prec-math
+[submodule "lib/test-suite"]
+	path = lib/test-suite
+	url = git@github.com:xinxinw1/test-suite
