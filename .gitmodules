@@ -7,3 +7,6 @@
 [submodule "lib/test-suite"]
 	path = lib/test-suite
 	url = git@github.com:xinxinw1/test-suite
+[submodule "lib/cmpl-math"]
+	path = lib/cmpl-math
+	url = git@github.com:xinxinw1/cmpl-math
