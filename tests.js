@@ -1,6 +1,6 @@
 title("Math Library Testing");
 
-var tsver = "5.0-31";
+var tsver = "5.0-32";
 
 var slow = false; // change to true to run slow tests
 var wpi = false;
@@ -405,6 +405,8 @@ testerr('R.pow(R.mknum("-2.3"), R.mknum("5.3"))');
 teststr('R.pow(R.mknum("1523435"), R.mknum("1.2"), 10)', "26265683.9896258295");
 teststr('R.pow(R.mknum("-3"), R.mknum("3"))', "-27");
 teststr('R.pow(R.mknum("-3.53"), R.mknum("3"), 16)', "-43.986977");
+teststr('R.pow(R.mknum("10"), R.mknum("100"))', "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+teststr('R.pow(R.mknum("10"), R.mknum("-100"))', "0");
 
 
 teststr('R.powExact(R.mknum("-3.53"), 3)', "-43.986977");
