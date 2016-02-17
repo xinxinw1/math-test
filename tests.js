@@ -1,12 +1,12 @@
 title("Math Library Testing");
 
-var tsver = "5.0-34";
+var tsver = "5.0-36";
 
 var slow = false; // change to true to run slow tests
 var wpi = false;
 var wln = false;
 
-aload(["lib/tools/tools.js", "lib/prec-math/prec-math.js", "lib/cmpl-math/cmpl-math.js", "lib/math-check/math-check.js", "lib/math-parse/math-parse.js", "lib/math-exec/math-exec.js"], tsver, function (){
+aload(["lib/tools/tools.js", "lib/prec-math/prec-math.js", "lib/cmpl-math/cmpl-math.js", "lib/math-check/math-check.js", "lib/math-parse/math-parse.js", "lib/lisp-tools/lisp-tools.js", "lib/math-exec/math-exec.js"], tsver, function (){
 
 //// Converters ////
 
@@ -224,6 +224,8 @@ teststr('R.rnd(R.mknum("-1253.3535"), 10)', "-1253.3535");
 teststr('R.rnd(R.mknum("-1253.3535"), -2)', "-1300");
 teststr('R.rnd(R.mknum("1253.3535"), -4)', "0");
 teststr('R.rnd(R.mknum("-9999.535248923"))', "-10000");
+teststr('R.rnd(R.mknum("-0.09"))', "0");
+teststr('R.rnd(R.mknum("0.09"))', "0");
 
 teststr('R.cei(R.mknum("1253.3535"), 1)', "1253.4");
 teststr('R.cei(R.mknum("1253.3535"), 2)', "1253.36");
@@ -232,6 +234,8 @@ teststr('R.cei(R.mknum("-1253.3535"), 10)', "-1253.3535");
 teststr('R.cei(R.mknum("-1253.3535"), -2)', "-1200");
 teststr('R.cei(R.mknum("1253.3535"), -4)', "10000");
 teststr('R.cei(R.mknum("-9999.535248923"))', "-9999");
+teststr('R.cei(R.mknum("-0.09"))', "0");
+teststr('R.cei(R.mknum("0.09"))', "1");
 
 teststr('R.flr(R.mknum("1253.3535"), 1)', "1253.3");
 teststr('R.flr(R.mknum("1253.3535"), 2)', "1253.35");
@@ -240,6 +244,8 @@ teststr('R.flr(R.mknum("-1253.3535"), 10)', "-1253.3535");
 teststr('R.flr(R.mknum("-1253.3535"), -2)', "-1300");
 teststr('R.flr(R.mknum("1253.3535"), -4)', "0");
 teststr('R.flr(R.mknum("-9999.535248923"))', "-10000");
+teststr('R.flr(R.mknum("-0.09"))', "-1");
+teststr('R.flr(R.mknum("0.09"))', "0");
 
 teststr('R.trn(R.mknum("1253.3535"), 1)', "1253.3");
 teststr('R.trn(R.mknum("1253.3535"), 2)', "1253.35");
@@ -248,6 +254,8 @@ teststr('R.trn(R.mknum("-1253.3535"), 10)', "-1253.3535");
 teststr('R.trn(R.mknum("-1253.3535"), -2)', "-1200");
 teststr('R.trn(R.mknum("1253.3535"), -4)', "0");
 teststr('R.trn(R.mknum("-9999.535248923"))', "-9999");
+teststr('R.trn(R.mknum("-0.09"))', "0");
+teststr('R.trn(R.mknum("0.09"))', "0");
 
 teststr('R.dec(R.mknum("23.45215"), -1)', "3.45215");
 teststr('R.dec(R.mknum("23.45215"), 0)', "0.45215");
@@ -255,6 +263,8 @@ teststr('R.dec(R.mknum("23.45215"), 1)', "0.05215");
 teststr('R.dec(R.mknum("-23.45215"), -1)', "-3.45215");
 teststr('R.dec(R.mknum("-23.45215"), 0)', "-0.45215");
 teststr('R.dec(R.mknum("-23.45215"), 1)', "-0.05215");
+teststr('R.dec(R.mknum("-0.09"))', "-0.09");
+teststr('R.dec(R.mknum("0.09"))', "0.09");
 
 if (slow){
   teststr('R.expTaylorFrac(R.mknum("0.1"), 1000)', "1.1051709180756476248117078264902466682245471947375187187928632894409679667476543029891433189707486536329171204854012445361537347145315787020068902997574505197515004866018321613310249357028047934586850494525645057122112661163770326284627042965573236001851138977093600284769443372730658853053002811154007820888910705403712481387499832879763074670691187054786420033729321209162792986139109713136202181843612999064371057442214441509033603625128922139492683515203569550353743656144372757405378395318324008280741587539066613515113982139135726893022699091000215648706791206777090283207508625041582515035160384730085864811589785637025471895631826720701700554046867490844416060621933317666818019314469778173494549497985045303406629427511807573756398858555866448811811806333247210364950515781422279735945226411105718464916466588898895425154437563356326922423993425668055030150187978568089290481077628854935380963680803086975643392286380110893491216896970405186147072881173903395370306903756052863966751655566156");
