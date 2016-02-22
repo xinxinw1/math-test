@@ -6,7 +6,7 @@ var slow = false; // change to true to run slow tests
 var wpi = false;
 var wln = false;
 
-aload(["lib/tools/tools.js", "lib/prec-math/prec-math.js", "lib/cmpl-math/cmpl-math.js", "lib/math-check/math-check.js", "lib/math-parse/math-parse.js", "lib/lisp-tools/lisp-tools.js", "lib/math-exec/math-exec.js"], tsver, function (){
+aload(["lib/tools/tools.js", "lib/prec-math/prec-math.js", "lib/cmpl-math/cmpl-math.js", "lib/math-check/math-check.js", "lib/math-parse/math-parse.js", "lib/math-exec/math-exec.js"], tsver, function (){
 
 //// Converters ////
 
