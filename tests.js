@@ -888,4 +888,7 @@ test('PMath.calc("cbrt(-1)")', "-1");
 test('PMath.calc("(-1)^(1/3)")', "0.5+0.8660254037844386i");
 test('PMath.calc("sqrt(i)")', "0.7071067811865475+0.7071067811865475i");
 
+test('PMath.calc("f(x)=x^2+2x+1, f(3)")', "16");
+testerr('PMath.calc("g(x)=(r=3, x*r), g(2), r")', "16");
+
 });
